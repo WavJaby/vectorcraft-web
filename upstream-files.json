@@ -1,0 +1,67 @@
+{
+  "release": "v0.4.0",
+  "archive": "https://github.com/storytold/vectorcraft/releases/download/v0.4.0/vectorcraft-web-0.4.0.zip",
+  "archiveSha256": "fa4349aa78ef545a9e4d29e6b9468e419b5231fa4bb5c379dd5f6ad50cdab3de",
+  "files": [
+    {
+      "path": "app/_headers",
+      "bytes": 326,
+      "sha256": "e3e253de74fb99a761fc91d4dec4b81ad6a1022b29c98761b5ac1e8ba5aff05a"
+    },
+    {
+      "path": "app/.htaccess",
+      "bytes": 495,
+      "sha256": "c92d61b428bff284fce08dc57f0255261476397f2cba5836c833974eded5c725"
+    },
+    {
+      "path": "app/HOSTING.md",
+      "bytes": 4282,
+      "sha256": "03d741952de1a6b0867dcb21fc79aab35af3e233efa7fd51bb778644c669d791"
+    },
+    {
+      "path": "app/index.html",
+      "bytes": 1482,
+      "sha256": "462eda012c255bf297f2b4bf7d9e3d9a367d0a975f396571ea9443794d5e2350"
+    },
+    {
+      "path": "app/LICENSE-APACHE",
+      "bytes": 10174,
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "path": "app/LICENSE-MIT",
+      "bytes": 1103,
+      "sha256": "8b6025dc4b707e0fb08b9c2054096f1be3ae61529399aa2c348dec676562dc71"
+    },
+    {
+      "path": "app/OFL-biz-ud-mincho.txt",
+      "bytes": 4408,
+      "sha256": "ef0ed524b3bd012f37015e986809eed6f67905456ebfc1ebd7fcc2765282ee01"
+    },
+    {
+      "path": "app/OFL-biz-ud-pgothic.txt",
+      "bytes": 4408,
+      "sha256": "e753d7155d53c747d037a445e584c8ecfca6dd79846db610417e282a736b28bc"
+    },
+    {
+      "path": "app/OFL-shippori-mincho.txt",
+      "bytes": 4399,
+      "sha256": "41fba056279be5f45ff9a99e44b7b53897b42732f5806d8e666e0ab49ac6bd38"
+    },
+    {
+      "path": "app/README.md",
+      "bytes": 16317,
+      "sha256": "f01772d4dd4068366de19c2b4f2498ac58541c94dde694097d49dbcff3120b67"
+    },
+    {
+      "path": "app/vectorcraft-web-e53f7b633918d292_bg.wasm",
+      "bytes": 46605123,
+      "sha256": "1be70253f9cdc557c978af8596ebfb6eeed73887cbdb3cae633608c938fdbe66"
+    },
+    {
+      "path": "app/vectorcraft-web-e53f7b633918d292.js",
+      "bytes": 158298,
+      "sha256": "6678978d40df85c71f8e8c5de5b9700b5d2a1ef3004d1bebfddeaa494242840f"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An unofficial browser experience of VectorCraft using the official WebAssembly module with a community bootstrap. VectorCraft is made by the ArtCraft Team and contributors.">
+  <title>VectorCraft · Unofficial browser experience</title>
+  <link rel="stylesheet" href="./site.css">
+  <script src="./delivery-config.js" defer></script>
+  <script src="./site.js" defer></script>
+</head>
+<body>
+  <button id="toggle-toolbar" type="button" aria-controls="site-toolbar" aria-expanded="true" title="Collapse site toolbar">▴</button>
+  <header class="toolbar" id="site-toolbar">
+    <div class="identity"><strong>VectorCraft</strong><span data-i18n="badge">Unofficial browser experience · v0.4.0</span></div>
+    <nav aria-label="Original project and site information" data-i18n-aria="navigation">
+      <a href="https://github.com/storytold/vectorcraft" target="_blank" rel="noopener noreferrer" data-i18n="source">Original GitHub ↗</a>
+      <a class="download" href="https://github.com/storytold/vectorcraft/releases/latest" target="_blank" rel="noopener noreferrer" data-i18n="download">Download official desktop app ↗</a>
+      <button id="show-notice" type="button" data-i18n="notice">About this experience</button>
+    </nav>
+  </header>
+  <main id="editor-container" aria-label="VectorCraft editor" data-i18n-aria="editor">
+    <div id="mobile-controls">
+      <label for="editor-scale" data-i18n="zoom">Editor zoom</label>
+      <select id="editor-scale"><option value="auto" data-i18n="fit">Fit width</option><option value="0.5">50%</option><option value="0.75">75%</option><option value="1">100%</option></select>
+      <output id="editor-scale-value" for="editor-scale"></output>
+      <span class="note" data-i18n="rotate">Landscape works best</span>
+    </div>
+    <div id="editor-host"><p id="editor-placeholder" data-i18n="placeholder">Read the notice, then select “Start experience” to load the editor.</p></div>
+    <section id="host-loading" hidden aria-live="polite" aria-label="Loading VectorCraft">
+      <div class="loading-card">
+        <h2 id="loading-title">Preparing VectorCraft…</h2>
+        <progress id="loading-progress" max="100" aria-label="Application download progress"></progress>
+        <p id="loading-detail">Preparing the download…</p>
+        <p id="loading-time" class="note"></p>
+        <p id="loading-note" class="note">The first download is large. Keep this tab open; later visits can use a local cache.</p>
+        <div class="actions"><button id="retry-load" type="button" data-i18n="retry">Reload</button><a href="https://github.com/storytold/vectorcraft/releases/latest" target="_blank" rel="noopener noreferrer" data-i18n="download">Download official desktop app ↗</a></div>
+      </div>
+    </section>
+  </main>
+  <footer><span data-i18n="credit">VectorCraft by ArtCraft + contributors · Unofficial mirror · </span><a href="./app/NOTICE" target="_blank" rel="noopener" data-i18n="licenses">Licenses and credits</a></footer>
+  <dialog id="notice" aria-labelledby="notice-title">
+    <form method="dialog">
+      <p class="eyebrow">UNOFFICIAL COMMUNITY MIRROR</p>
+      <h1 id="notice-title" data-i18n="heading">An easier way to try VectorCraft</h1>
+      <p data-i18n="purpose">This site simply makes VectorCraft easier to try without installing it. VectorCraft is developed by the ArtCraft Team and contributors. This mirror is not operated or endorsed by them.</p>
+      <p><span data-i18n="build">You are loading the official v0.4.0 WebAssembly module with a community bootstrap. </span><strong data-i18n="parity">The web and desktop apps share an editing engine, but their features are not identical.</strong></p>
+      <ul>
+        <li data-i18n="files">Open files through the browser picker or drag and drop. Saving and exporting download new files without overwriting originals. Desktop folders and TCP/MCP services are unavailable.</li>
+        <li data-i18n="persistence">The official web app provides recovery in browser storage, subject to quota, private browsing and data clearing. Download saves explicitly; recovery is not a backup.</li>
+        <li data-i18n="performance">WebGPU or WebGL2 is required. Large vector documents, fonts and heavy operations depend on browser memory. Mobile scaling adjusts display size; it does not provide a complete touch interface.</li>
+        <li data-i18n="alpha">Browser restrictions do not imply the same restrictions on desktop. VectorCraft itself is still alpha; the desktop app is not guaranteed to have every feature complete.</li>
+      </ul>
+      <p class="note" data-i18n="evidence">Based on the v0.4.0 source, not an exhaustive test of every editing feature. Keep backups and evaluate the official desktop app before production work.</p>
+      <p id="storage-warning" class="note" hidden data-i18n="storage">Your browser blocks preference storage; this notice will return next visit.</p>
+      <label class="remember"><input id="remember-notice" type="checkbox"><span data-i18n="remember">Don't remind me in this browser (reopen via “About this experience”)</span></label>
+      <div class="actions"><a href="https://github.com/storytold/vectorcraft/releases/latest" target="_blank" rel="noopener noreferrer" data-i18n="download">Download official desktop app ↗</a><button id="start-editor" value="continue" autofocus data-i18n="start">Start experience</button></div>
+    </form>
+  </dialog>
+  <noscript>This experience requires JavaScript and WebAssembly. You can also <a href="https://github.com/storytold/vectorcraft/releases/latest">download the official desktop app</a>.</noscript>
+</body>
+</html>

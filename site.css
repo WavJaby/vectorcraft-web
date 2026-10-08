@@ -1,0 +1,51 @@
+/* VectorCraft v0.4.0 default MediumDark tokens from crates/ui-egui/src/theme.rs. */
+:root { --chrome: #535353; --dock: #424242; --canvas: #606060; --field: #454545; --border: #383838; --hover: #606060; --text: #d1d1d1; --muted: #b0b0b0; --accent: #378ef0; color-scheme: dark; font-family: system-ui, sans-serif; background: var(--chrome); color: var(--text); }
+* { box-sizing: border-box; }
+body { margin: 0; height: 100dvh; display: grid; grid-template-rows: auto minmax(0, 1fr); }
+a { color: #91c8ff; text-underline-offset: .2em; }
+button, .download { border: 1px solid var(--border); border-radius: 4px; padding: .55rem .8rem; background: var(--field); color: var(--text); font: inherit; cursor: pointer; text-decoration: none; }
+button:hover, .download:hover { background: var(--hover); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .7rem; padding: .65rem 3rem .65rem 1rem; border-bottom: 1px solid var(--dock); }
+.toolbar[hidden] { display: none; }
+body.toolbar-collapsed { grid-template-rows: minmax(0, 1fr); }
+#toggle-toolbar { position: absolute; top: .5rem; right: .5rem; z-index: 5; width: 1.8rem; height: 1.8rem; padding: 0; }
+/* Keep the toggle in its own gutter; do not overlay editor controls. */
+body.toolbar-collapsed main { margin-right: 1.8rem; }
+body.toolbar-collapsed #toggle-toolbar { top: .2rem; right: .15rem; width: 1.5rem; height: 1.5rem; }
+.identity { display: flex; flex-wrap: wrap; align-items: baseline; gap: .7rem; }
+.identity span, footer, .note { color: var(--muted); font-size: .8rem; }
+nav { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem; font-size: .85rem; }
+main { position: relative; min-height: 0; background: var(--canvas); }
+#editor-host { position: relative; height: 100%; overflow: hidden; }
+#mobile-controls { display: none; }
+#editor-placeholder { padding: 2rem; text-align: center; }
+#editor-surface { position: relative; width: 100%; height: 100%; }
+#editor-surface canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; outline: none; }
+footer { position: absolute; right: 2.1rem; bottom: .15rem; z-index: 4; max-width: 65vw; padding: 0; color: var(--muted); font-size: .65rem; line-height: 1.3; text-align: right; pointer-events: none; }
+footer a { color: inherit; pointer-events: auto; }
+dialog { width: min(44rem, calc(100% - 2rem)); max-height: calc(100dvh - 2rem); padding: 1.6rem; border: 1px solid var(--border); border-radius: 6px; background: var(--chrome); color: var(--text); line-height: 1.65; }
+dialog::backdrop { background: rgb(0 0 0 / .72); }
+h1 { font-size: 1.5rem; margin: .3rem 0 1rem; }
+.eyebrow { color: var(--muted); font-size: .7rem; letter-spacing: .12em; margin: 0; }
+ul { padding-left: 1.3rem; }
+li + li { margin-top: .6rem; }
+.remember { display: flex; align-items: baseline; gap: .4rem; font-size: .85rem; }
+.actions { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 1.2rem; }
+#start-editor { background: var(--accent); color: white; }
+#host-loading:not([hidden]) { position: absolute; inset: 0; display: grid; place-items: center; padding: 1rem; background: var(--canvas); }
+.loading-card { width: min(32rem, 100%); line-height: 1.6; }
+.loading-card h2 { font-size: 1.2rem; }
+progress { width: 100%; height: .8rem; accent-color: var(--accent); }
+#loading-detail { font-variant-numeric: tabular-nums; }
+@media (max-width: 600px) { .toolbar { padding: .5rem 2.8rem .5rem .5rem; } nav { gap: .5rem; } dialog { padding: 1rem; } footer { max-width: 80vw; font-size: .55rem; } }
+@media (max-width: 900px) {
+  body.toolbar-collapsed main { margin-right: 0; }
+  main { --mobile-controls-height: 2.25rem; overflow: hidden; }
+  #mobile-controls { position: absolute; inset: 0 0 auto; height: var(--mobile-controls-height); display: flex; align-items: center; gap: .4rem; padding: .2rem 2.5rem .2rem .4rem; background: var(--chrome); font-size: .75rem; white-space: nowrap; }
+  #mobile-controls select { min-height: 1.75rem; font: inherit; color: var(--text); background: var(--field); border: 1px solid var(--border); border-radius: 4px; }
+  #mobile-controls .note { font-size: .65rem; }
+  #editor-host { position: absolute; inset: var(--mobile-controls-height) 0 0; height: auto; overflow: hidden; }
+  #editor-surface { width: calc(100% / var(--editor-scale, 1)); height: calc(100% / var(--editor-scale, 1)); transform: scale(var(--editor-scale, 1)); transform-origin: top left; }
+  body.toolbar-collapsed #toggle-toolbar { top: .35rem; right: .3rem; }
+}

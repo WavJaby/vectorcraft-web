@@ -1,0 +1,10 @@
+/_site/
+/docs/
+/AGENTS.md
+/scripts/.agent/
+
+# Binary inputs and deployment outputs never enter Git.
+*.wasm
+/delivery/
+/_site*/
+*.zip
