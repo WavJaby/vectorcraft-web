@@ -1,9 +1,9 @@
 'use strict';
 globalThis.VECTORCRAFT_DELIVERY = Object.freeze({
-  "revision": "e53f7b633918d292",
-  "wasmPath": "app/vectorcraft-web-e53f7b633918d292_bg.wasm",
-  "wasmBytes": 46605123,
-  "wasmSha256": "1be70253f9cdc557c978af8596ebfb6eeed73887cbdb3cae633608c938fdbe66",
+  "revision": "b86a97bd7d399e62",
+  "wasmPath": "app/vectorcraft-web-b86a97bd7d399e62_bg.wasm",
+  "wasmBytes": 49118769,
+  "wasmSha256": "6e1c3a1e521d115cbc708988f159dcf672d0ce5b35e15bdcef6cc0da8a954a1f",
   "partsManifest": null,
   "partBytes": 524288,
   "downloadConcurrency": 4,
@@ -14,8 +14,8 @@ globalThis.VECTORCRAFT_DELIVERY = Object.freeze({
   "slowNoticeSeconds": 30,
   "workerReadyTimeoutMs": 5000,
   "appId": "vectorcraft",
-  "version": "0.4.0",
+  "version": "0.6.0",
   "canvasId": "vectorcraft_canvas",
-  "jsPath": "app/vectorcraft-web-e53f7b633918d292.js",
+  "jsPath": "app/vectorcraft-web-b86a97bd7d399e62.js",
   "bootstrap": "trunk"
 });

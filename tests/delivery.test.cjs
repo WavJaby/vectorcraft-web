@@ -154,11 +154,16 @@ test('other requests pass through without interception', () => {
   }
 });
 
-test('built package reproduces the pinned official artifact', { skip: !fs.existsSync(path.join(__dirname, '..', '_site')) }, () => {
-  const root = path.join(__dirname, '..', '_site');
+test('built package reproduces the pinned official artifact', { skip: !fs.existsSync(path.join(__dirname, '..', process.env.ARTCRAFT_SITE_DIR || '_site')) }, () => {
+  const root = path.join(__dirname, '..', process.env.ARTCRAFT_SITE_DIR || '_site');
   const context = vm.createContext({});
   vm.runInContext(fs.readFileSync(path.join(root, 'delivery-config.js'), 'utf8'), context);
   const config = context.VECTORCRAFT_DELIVERY;
+  const upstream = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'upstream-files.json')));
+  const pinned = upstream.files.find(file => file.path === config.wasmPath);
+  assert(pinned, 'Built Wasm must belong to the current upstream release');
+  assert.equal(config.wasmSha256, pinned.sha256);
+  assert.equal(config.wasmBytes, pinned.bytes);
   const filename = path.join(root, config.partsManifest);
   const manifest = JSON.parse(fs.readFileSync(filename));
   const chunks = manifest.parts.map(part => {

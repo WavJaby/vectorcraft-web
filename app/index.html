@@ -6,8 +6,8 @@
   <title>VectorCraft</title>
   
 <script type="module">
-import init, * as bindings from './vectorcraft-web-e53f7b633918d292.js';
-const wasm = await init({ module_or_path: './vectorcraft-web-e53f7b633918d292_bg.wasm' });
+import init, * as bindings from './vectorcraft-web-b86a97bd7d399e62.js';
+const wasm = await init({ module_or_path: './vectorcraft-web-b86a97bd7d399e62_bg.wasm' });
 
 
 window.wasmBindings = bindings;
@@ -22,7 +22,7 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
     #vectorcraft_loading { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
       color: #b8b8b8; font: 14px system-ui, sans-serif; pointer-events: none; }
   </style>
-<link rel="modulepreload" href="./vectorcraft-web-e53f7b633918d292.js" crossorigin="anonymous" integrity="sha384-sK+VeIal9vb6yqBMsE9gLRPW4uMZ3RRpj/ZCnepJpCZSCZNA2XHFrH7ze0f8xfHr"><link rel="preload" href="./vectorcraft-web-e53f7b633918d292_bg.wasm" crossorigin="anonymous" integrity="sha384-B9xnz8SBLawtg1p0GpyC+RA6sMoiRM8SO3OUpVBiRxUb3k/Ae4K9mk7NxeQaNt8b" as="fetch" type="application/wasm"></head>
+<link rel="modulepreload" href="./vectorcraft-web-b86a97bd7d399e62.js" crossorigin="anonymous" integrity="sha384-iU2zVuUcWKaCZbaeyMu8j3tj4KrXHPChTJXJcpedXp2IUtEkod1BIfDMIVqoO7TH"><link rel="preload" href="./vectorcraft-web-b86a97bd7d399e62_bg.wasm" crossorigin="anonymous" integrity="sha384-wypnHN9LdydBM0b0heW3ItNRuRgNgQH2bsCXOip3DgwcNpzTYhqDDfjEh40fUTMB" as="fetch" type="application/wasm"></head>
 <body>
   <canvas id="vectorcraft_canvas"></canvas>
   <div id="vectorcraft_loading">Loading VectorCraft&hellip;</div>

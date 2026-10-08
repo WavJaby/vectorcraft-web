@@ -2,7 +2,7 @@
 
 Try it at https://wavjaby.github.io/vectorcraft-web/. Original project: https://github.com/storytold/vectorcraft. Official desktop downloads: https://github.com/storytold/vectorcraft/releases/latest.
 
-VectorCraft is made by the ArtCraft Team and contributors. This independent community mirror makes the official v0.4.0 browser build easier to try without installation; it is not operated or endorsed by them. All original application files remain byte-for-byte unchanged.
+VectorCraft is made by the ArtCraft Team and contributors. This independent community mirror makes the official v0.6.0 browser build easier to try without installation; it is not operated or endorsed by them. All original application files remain byte-for-byte unchanged.
 
 ## Hosting and delivery
 
@@ -16,7 +16,7 @@ Below 900 CSS pixels, the editor fits a 960-pixel virtual viewport; 50%/75%/100%
 
 The default backend selection tries WebGPU where available. A reported GPU startup error retries the unchanged application once with `?webgl`; an explicit `?webgl` override disables that retry. Download errors, slow startup and failures after editing starts never trigger a backend reload. WebGL2 is a compatibility backend, not a guaranteed speed improvement; document rasterization remains on the CPU.
 
-Static/configuration evidence from tagged v0.4.0 source; no claim of exhaustive feature parity:
+Static/configuration evidence from tagged v0.6.0 source; no claim of exhaustive feature parity:
 
 | Area | Browser behavior | Source |
 |---|---|---|
@@ -30,7 +30,7 @@ Download saves explicitly and keep backups. Browser limits do not imply identica
 
 ## Provenance and licenses
 
-Official release: https://github.com/storytold/vectorcraft/releases/tag/v0.4.0. `upstream-files.json` records archive provenance and original file hashes; every build checks them. Compression/splitting restores the exact original bytes. This establishes consistency with the published release, not an independent author-signature chain.
+Official release: https://github.com/storytold/vectorcraft/releases/tag/v0.6.0. `upstream-files.json` records archive provenance and original file hashes; every build checks them. Compression/splitting restores the exact original bytes. This establishes consistency with the published release, not an independent author-signature chain.
 
 VectorCraft is MIT OR Apache-2.0; retain LICENSE-MIT, LICENSE-APACHE, [NOTICE](app/NOTICE), [ASSETS.md](app/ASSETS.md) and accompanying asset licenses. Independent host code adapted from the PhotoCraft/PrintCraft community mirrors is MIT. ArtCraft marks have [separate terms](app/docs/brand/LICENSE-brand.txt); the host uses plain text attribution and no extracted logos. No complete transitive dependency-license audit is claimed.
 
@@ -40,7 +40,7 @@ VectorCraft is MIT OR Apache-2.0; retain LICENSE-MIT, LICENSE-APACHE, [NOTICE](a
 
 The community bootstrap in `app-loader.js` mounts the official canvas in the main document; no iframe is created. Original JS/Wasm are verified against `upstream-files.json`. The host, loader and layout are community code, not an official build or endorsement. Keep upstream copyright, licenses, NOTICE and third-party attributions; do not extract ArtCraft brand marks into the host.
 
-Wasm and compressed parts are ignored. CI downloads the exact archive pinned by URL + SHA-256, restores the verified Wasm, generates a fresh Pages artifact, and deploys it without committing binaries. WordCraft previews must be archived as GitHub Release assets because upstream CI artifacts expire. Browser asset caches retire prior Wasm hashes on service-worker activation. Existing Git history is not rewritten by this change.
+Wasm and compressed parts are ignored. CI downloads the exact archive pinned by URL + SHA-256, restores the verified Wasm, generates a fresh Pages artifact, and deploys it without committing binaries. Browser asset caches retire prior Wasm hashes on service-worker activation. Existing Git history is not rewritten by this change.
 
 1. Select an explicit official web ZIP and verify its published SHA-256; never silently follow latest.
 2. Run `node scripts/update-upstream.cjs --archive HTTPS_ZIP_URL --sha256 SHA256 --version VERSION` to inspect the update, then repeat with `--write`. The command rejects changed archive/bootstrap contracts; review upstream licensing, supplemental notices and web/desktop differences.
