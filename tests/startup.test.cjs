@@ -5,7 +5,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const source = fs.readFileSync(path.join(__dirname, '../app-loader.js'), 'utf8');
 const context = vm.createContext({URL});
-vm.runInContext(source.slice(0, source.indexOf('export async function')).replace('export function', 'function'), context);
+vm.runInContext(source.replaceAll('export ', ''), context);
 test('GPU startup failure chooses WebGL2 once and preserves project flags', () => {
   const next = context.gpuFallbackUrl('wgpu requestDevice failed', 'https://example.test/app/?empty&fresh');
   const url = new URL(next);
@@ -18,8 +18,25 @@ test('explicit CPU override and non-GPU failures do not reload', () => {
   assert.equal(context.gpuFallbackUrl('wgpu failed', 'https://example.test/?cpu'), null);
   assert.equal(context.gpuFallbackUrl('invalid application data', 'https://example.test/'), null);
 });
-test('host creates a canvas in the same document and never creates an iframe', () => {
-  const host = fs.readFileSync(path.join(__dirname, '../site.js'), 'utf8');
-  assert(!/createElement\(['"]iframe['"]\)|contentWindow|contentDocument/.test(host));
-  assert(source.includes("document.createElement('canvas')"));
+test('frame preserves URL flags and accepts startup reports only from its own same-origin window', async () => {
+  const frame = {contentWindow: {}};
+  let listener;
+  let mounted;
+  const events = [];
+  context.location = new URL('https://example.test/vectorcraft/?webgl&empty#project');
+  context.window = {addEventListener: (type, callback) => { listener = callback; }};
+  context.CustomEvent = class { constructor(type, options) { this.type = type; this.detail = options.detail; } };
+  context.document = {createElement: tag => { assert.equal(tag, 'iframe'); return frame; }, getElementById: () => ({replaceChildren: child => { mounted = child; }}), dispatchEvent: event => events.push(event)};
+  const handle = await context.startEditor();
+  assert.equal(mounted, frame);
+  assert.equal(frame.src, 'https://example.test/vectorcraft/editor.html?webgl&empty#project');
+  const report = {origin: context.location.origin, source: frame.contentWindow, data: {type: 'vectorcraft-startup', ready: true}};
+  listener({...report, origin: 'https://other.test'});
+  listener({...report, source: {}});
+  assert.equal(handle.state.ready, false);
+  listener(report);
+  assert.equal(handle.state.ready, true);
+  listener({...report, data: {type: 'vectorcraft-startup', error: 'GPUDevice failed'}});
+  assert.equal(handle.state.error, 'GPUDevice failed');
+  assert.equal(events[0].type, 'editor-fatal');
 });

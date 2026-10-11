@@ -1,8 +1,8 @@
 {
-  "version": "0.6.0",
-  "release": "v0.6.0",
-  "archive": "https://github.com/storytold/vectorcraft/releases/download/v0.6.0/vectorcraft-web-0.6.0.zip",
-  "archiveSha256": "08559287ff950b9e407b57079591dedc8db69958ef1e1e42751c0a567e5a5def",
+  "version": "0.9.0",
+  "release": "v0.9.0",
+  "archive": "https://github.com/storytold/vectorcraft/releases/download/v0.9.0/vectorcraft-web-0.9.0.zip",
+  "archiveSha256": "4ebe8829a22fa17975c96765dfe9812bd2834e3e721381b4b14abb802c4d7dc1",
   "files": [
     {
       "path": "app/OFL-biz-ud-pgothic.txt",
@@ -10,9 +10,14 @@
       "sha256": "e753d7155d53c747d037a445e584c8ecfca6dd79846db610417e282a736b28bc"
     },
     {
+      "path": "app/vectorcraft-web-243cdb1020baca4_bg.wasm",
+      "bytes": 56349518,
+      "sha256": "6ca563803b0e4f07039a6315affec3e7d0a1a9c1ea4f74619b238d97719da967"
+    },
+    {
       "path": "app/.htaccess",
-      "bytes": 495,
-      "sha256": "c92d61b428bff284fce08dc57f0255261476397f2cba5836c833974eded5c725"
+      "bytes": 530,
+      "sha256": "2660940c9af97845dfd475cf1daa2ff1df18afb0bd91471e74e60d677fab2c6a"
     },
     {
       "path": "app/OFL-biz-ud-mincho.txt",
@@ -20,19 +25,14 @@
       "sha256": "ef0ed524b3bd012f37015e986809eed6f67905456ebfc1ebd7fcc2765282ee01"
     },
     {
-      "path": "app/vectorcraft-web-b86a97bd7d399e62_bg.wasm",
-      "bytes": 49118769,
-      "sha256": "6e1c3a1e521d115cbc708988f159dcf672d0ce5b35e15bdcef6cc0da8a954a1f"
-    },
-    {
       "path": "app/index.html",
-      "bytes": 1482,
-      "sha256": "fa8abaf4db9dbb2bda87964b4bd3575192d0062bf63ebf3f99f06b8d75cc1927"
+      "bytes": 1478,
+      "sha256": "850543540bcc1e7687d2c5a865834bfdbbea6136d8b0bb28c901493e487fb4a1"
     },
     {
       "path": "app/_headers",
-      "bytes": 326,
-      "sha256": "e3e253de74fb99a761fc91d4dec4b81ad6a1022b29c98761b5ac1e8ba5aff05a"
+      "bytes": 414,
+      "sha256": "dbca09da27d94b05de8b5f3ca1b933d3390f18f5cf64669b0910acb672e39968"
     },
     {
       "path": "app/LICENSE-MIT",
@@ -51,18 +51,18 @@
     },
     {
       "path": "app/README.md",
-      "bytes": 20336,
-      "sha256": "6c2108f5afb2a8e101861545874e4ea9cc80a2768f080827dbfdbdd1b609c35f"
+      "bytes": 22729,
+      "sha256": "069e3b8580738e491779ad2fb4f3fbf10e765f6fb4058f0d05903ee8e175f192"
     },
     {
-      "path": "app/vectorcraft-web-b86a97bd7d399e62.js",
-      "bytes": 164275,
-      "sha256": "d13987e5e4caa8f086cca356841f18ee8fd0edf6829642f93a51e76aa0b2a916"
+      "path": "app/vectorcraft-web-243cdb1020baca4.js",
+      "bytes": 165994,
+      "sha256": "0372f03f553465a31207dcb3e36ea25597319a37f3796ea334ed768e9e67bd1a"
     },
     {
       "path": "app/HOSTING.md",
-      "bytes": 4282,
-      "sha256": "03d741952de1a6b0867dcb21fc79aab35af3e233efa7fd51bb778644c669d791"
+      "bytes": 5107,
+      "sha256": "73aa2e811441de59c633718b479f2bc9427942998eb752b65b5a6a6646ea4cd4"
     }
   ]
 }

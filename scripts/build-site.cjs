@@ -49,7 +49,7 @@ async function main() {
   const manifest = { encoding: 'gzip', wasmBytes: wasm.length, wasmSha256: config.wasmSha256, compressedBytes: gzip.length, parts: parts.map(part => ({ path: part.path, bytes: part.bytes.length, sha256: part.sha256 })) };
   if (!zlib.gunzipSync(Buffer.concat(parts.map(part => part.bytes))).equals(wasm)) throw new Error('Packaging failed byte-exact reconstruction gate');
   // Explicit public artifact boundary; build tools, workflow files and Git metadata never reach Pages.
-  const publicFiles = ['app', '.nojekyll', 'index.html', 'site.css', 'site.js', 'app-loader.js', 'hardware-check.js', 'service-worker.js', 'LICENSE-MIT', 'LICENSE-APACHE', 'README.md', 'upstream-files.json'];
+  const publicFiles = ['app', '.nojekyll', 'index.html', 'site.css', 'site.js', 'app-loader.js', 'editor.html', 'editor-bootstrap.js', 'hardware-check.js', 'service-worker.js', 'LICENSE-MIT', 'LICENSE-APACHE', 'README.md', 'upstream-files.json'];
   console.log(JSON.stringify({ mode: write ? 'write' : 'dry-run', output, publicFiles, rawBytes: wasm.length, compressedBytes: gzip.length, parts: parts.length, concurrency: config.downloadConcurrency, packagePath }));
   if (!write) process.exit(0);
   fs.mkdirSync(output, { recursive: true });

@@ -20,8 +20,7 @@ main { position: relative; min-height: 0; background: var(--canvas); }
 #editor-host { position: relative; height: 100%; overflow: hidden; }
 #mobile-controls { display: none; }
 #editor-placeholder { padding: 2rem; text-align: center; }
-#editor-surface { position: relative; width: 100%; height: 100%; }
-#editor-surface canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; outline: none; }
+#editor-surface { position: relative; width: 100%; height: 100%; display: block; border: 0; }
 footer { position: absolute; right: 2.1rem; bottom: .15rem; z-index: 4; max-width: 65vw; padding: 0; color: var(--muted); font-size: .65rem; line-height: 1.3; text-align: right; pointer-events: none; }
 footer a { color: inherit; pointer-events: auto; }
 dialog { width: min(44rem, calc(100% - 2rem)); max-height: calc(100dvh - 2rem); padding: 1.6rem; border: 1px solid var(--border); border-radius: 6px; background: var(--chrome); color: var(--text); line-height: 1.65; }
